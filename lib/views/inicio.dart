@@ -25,12 +25,17 @@ class _InicioScreenState extends State<InicioScreen> {
     });
     print('setState: El contador ha sido actualizado a $_counter.');
   }
+
   void _decrementCounter() {
     setState(() {
       _counter--; // Incrementa el contador
+      if (_counter < 0) {
+        _counter = 0;
+      }
     });
     print('setState: El contador ha sido actualizado a $_counter.');
   }
+
   void _refreshCounter() {
     setState(() {
       _counter = 0; // Incrementa el contador
@@ -71,7 +76,10 @@ class _InicioScreenState extends State<InicioScreen> {
           children: [
             const Text('Bienvenido', style: TextStyle(fontSize: 24)),
             const SizedBox(height: 20),
-            const Text('Aumenta el contador cuantas veces quieras', style: TextStyle(fontSize: 16)),
+            const Text(
+              'Aumenta el contador cuantas veces quieras',
+              style: TextStyle(fontSize: 16),
+            ),
             const SizedBox(height: 20),
             Text('Contador: $_counter', style: const TextStyle(fontSize: 20)),
             const SizedBox(height: 20),
@@ -80,14 +88,16 @@ class _InicioScreenState extends State<InicioScreen> {
               onPressed: _incrementCounter,
               icon: const Icon(Icons.add),
             ),
-            ElevatedButton.icon(onPressed:_decrementCounter, 
-            label: const Text('Decrementar Contador'),
-            icon: const Icon(Icons.remove),
+            ElevatedButton.icon(
+              onPressed: _decrementCounter,
+              label: const Text('Decrementar Contador'),
+              icon: const Icon(Icons.remove),
             ),
-            ElevatedButton.icon(onPressed: _refreshCounter, 
-            label: const Text('Reiniciar Contador'),
-            icon: const Icon(Icons.refresh),
-            )
+            ElevatedButton.icon(
+              onPressed: _refreshCounter,
+              label: const Text('Reiniciar Contador'),
+              icon: const Icon(Icons.refresh),
+            ),
           ],
         ),
       ),
@@ -99,8 +109,8 @@ class _InicioScreenState extends State<InicioScreen> {
             label: 'Contacto',
           ),
         ],
-        selectedItemColor: const Color.fromARGB(255, 197, 136, 216),
-        unselectedItemColor: const Color.fromARGB(255, 197, 136, 216),
+        selectedItemColor: const Color.fromARGB(255, 255, 255, 255),
+        unselectedItemColor: const Color.fromARGB(255, 255, 255, 255),
         backgroundColor: Theme.of(context).primaryColor,
         onTap: (int index) {
           if (index == 0) {
