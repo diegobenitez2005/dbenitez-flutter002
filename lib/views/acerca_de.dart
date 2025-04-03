@@ -12,6 +12,12 @@ class AcercaDeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Acerca de'),
+        backgroundColor: Theme.of(context).primaryColor,
+              centerTitle: true,
+              titleTextStyle: const TextStyle(
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
+          ),
       ),
       body: const Center(
         child: Text(

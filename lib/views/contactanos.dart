@@ -12,6 +12,7 @@ class ContactoScreen extends StatefulWidget {
 
 class _ContactoScreenState extends State<ContactoScreen> {
   final TextEditingController _controller = TextEditingController();
+ 
   void _goBack() {
     Navigator.pop(context);
   } // Controlador para el TextField
@@ -34,7 +35,15 @@ class _ContactoScreenState extends State<ContactoScreen> {
   Widget build(BuildContext context) {
     print('build: La pantalla Contacto está siendo construida.');
     return Scaffold(
-      appBar: AppBar(title: const Text('Contacto')),
+      appBar: AppBar(title: const Text('Contacto'),
+      // Cambia el color de la barra de estado a color primario
+              backgroundColor: Theme.of(context).primaryColor,
+              centerTitle: true,
+              titleTextStyle: const TextStyle(
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
+          ),
+        ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(

@@ -25,6 +25,18 @@ class _InicioScreenState extends State<InicioScreen> {
     });
     print('setState: El contador ha sido actualizado a $_counter.');
   }
+  void _decrementCounter() {
+    setState(() {
+      _counter--; // Incrementa el contador
+    });
+    print('setState: El contador ha sido actualizado a $_counter.');
+  }
+  void _refreshCounter() {
+    setState(() {
+      _counter = 0; // Incrementa el contador
+    });
+    print('setState: El contador ha sido actualizado a $_counter.');
+  }
 
   void _navigateToAcercaDe() {
     Navigator.push(
@@ -68,6 +80,14 @@ class _InicioScreenState extends State<InicioScreen> {
               onPressed: _incrementCounter,
               icon: const Icon(Icons.add),
             ),
+            ElevatedButton.icon(onPressed:_decrementCounter, 
+            label: const Text('Decrementar Contador'),
+            icon: const Icon(Icons.remove),
+            ),
+            ElevatedButton.icon(onPressed: _refreshCounter, 
+            label: const Text('Reiniciar Contador'),
+            icon: const Icon(Icons.refresh),
+            )
           ],
         ),
       ),
