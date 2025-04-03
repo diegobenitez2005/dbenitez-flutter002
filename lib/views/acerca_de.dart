@@ -6,7 +6,7 @@ class AcercaDeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    void _goBack() {
+    void goBack() {
     Navigator.pop(context); // Regresar a la pantalla anterior
     }
     return Scaffold(
@@ -20,7 +20,7 @@ class AcercaDeScreen extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _goBack,
+        onPressed: goBack,
         tooltip: 'Regresar',
         child: const Icon(Icons.arrow_back),
       ),
